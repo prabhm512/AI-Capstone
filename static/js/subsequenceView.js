@@ -17,7 +17,7 @@ var SubsequenceView = {
 	initClickAddPanelButtonBehaviour: function() {
 		var self = this;
 
-		$("#subsequence-view .add-panel-btn").click(clickAddPanelButton);
+		$(".navbar .container-fluid .add-panel-btn").click(clickAddPanelButton);
 
 		function clickAddPanelButton() {
 			var newPanelEl = self.appendPanel();
@@ -30,7 +30,7 @@ var SubsequenceView = {
 		}
 	},
 	initClickToggleNameButtonBehaviour: function() {
-		$("#subsequence-view .toggle-name-btn").click(clickToggleNameButton);
+		$(".navbar .container-fluid .toggle-name-btn").click(clickToggleNameButton);
 
 		function clickToggleNameButton() {
 			var currentState = $(this).attr("state");

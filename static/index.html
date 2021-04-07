@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
+	<link rel="shortcut icon" type="image/jpg" href="./favicon.ico"/>
+	<title>IVASCBA</title>
+	<!-- Bootstrap CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-tooltip.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
 	<link rel="stylesheet" type="text/css" href="fonts/Font-Awesome/css/font-awesome.min.css">
@@ -16,17 +20,40 @@
 </head>
 
 <body>
+	<!-- Navbar -->
+	<nav class="navbar" style="background-color: blue;">
+		<div class="container-fluid">
+			<span class="navbar-brand mb-0 h1" data-bs-toggle="tooltip" data-bs-placement="top" title="Interactive Visual Analytics System for Customer Behaviour Analysis">IVASCBA</span>
+			<div class="panelButtons">
+				<button class="add-panel-btn btn"><span class="fa-plus"></span>Add Panel</button>
+				<button class="toggle-name-btn btn" state="short"><span class="fa-exchange"></span>Change to Long Names</button>
+			</div>
+			<br>
+		</div>
+	</nav>
+	<br><br>
 	<div id="left-column" class="noselection">
 		<div id="subsequence-view" class="ui-view">
+			<div class="heading"><i>Subsequence Analysis View</i></div>
 			<div class="container"></div>
-			<div class="toggle-name-btn" state="short"><span class="fa-exchange"></span>Change to Long Names</div>
-			<div class="add-panel-btn"><span class="fa-plus"></span>Add Panel</div>
 		</div>
 	</div>
+	
+	<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
 
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+		<div class="offcanvas-header">
+			<h5 id="offcanvasRightLabel">Offcanvas right</h5>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+			...
+		</div>
+	</div> -->
 	<div id="right-column" class="noselection">
 		<div id="inspection-view" class="ui-view">
 			<div class="context-visualization">
+				<div class="heading"><i>Inspection View</i></div>
 				<div class="container"><svg></svg></div>
 			</div>
 
@@ -236,6 +263,18 @@
 		<span class="fa fa-check"></span>
 	</div>
 
+	<!-- Changes -->
+	<script type="text/javascript">
+		// var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		// var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		// 	return new bootstrap.Tooltip(tooltipTriggerEl)
+		// })
+
+		var myOffcanvas = document.getElementById('offcanvasRight')
+		myOffcanvas.addEventListener('hidden.bs.offcanvas', function () {
+			show.bs.offcanvas
+		})
+	</script>
 	<script src="js/subsequenceView.js"></script>
 	<script src="js/topBar.js"></script>
 	<script src="js/contextBar.js"></script>
